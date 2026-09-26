@@ -1,0 +1,17 @@
+# ambientes virtuais
+venv/
+extract/venv/
+*.venv
+
+# cache do Python
+__pycache__/
+*.pyc
+
+# cache do pysus
+.pysus/
+
+# arquivos de sistema
+.DS_Store
+
+# segredos
+.env
