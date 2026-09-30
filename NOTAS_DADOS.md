@@ -27,3 +27,15 @@ Preencher com zero implicaria afirmar "zero internações naquele mês", o
 que é estatisticamente falso — a informação correta é "dado indisponível
 na fonte para este período". O dashboard final deve indicar essa ausência
 explicitamente (ex: gap no gráfico de série temporal, não um vale a zero).
+
+## Dimensão CNES (capacidade hospitalar)
+
+O CNES é um cadastro (não um histórico de eventos como o SIH), então não
+faz sentido extrair todos os 60 meses. Optamos por **um snapshot anual**
+(dezembro de cada ano, 2019-2023), capturando mudanças reais na rede
+hospitalar ao longo do tempo sem redundância — um padrão equivalente a
+uma Slowly Changing Dimension.
+
+Grupo extraído: `ST` (Estabelecimentos). Outros grupos do CNES (leitos,
+profissionais, equipamentos, serviços especializados) existem na fonte
+mas não fazem parte do escopo deste projeto.
